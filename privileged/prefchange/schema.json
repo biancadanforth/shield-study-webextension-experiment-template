@@ -1,0 +1,26 @@
+[
+  {
+    "namespace": "prefchange",
+    "description": "Change the value of a preference in Firefox.",
+    "functions": [
+      {
+        "name": "setBoolPref",
+        "type": "function",
+        "description": "Set the boolean value of a preference in Firefox.",
+        "async": true,
+        "parameters": [
+          {
+            "name": "pref",
+            "type": "string",
+            "description": "The string value for the name of the preference."
+          },
+          {
+            "name": "value",
+            "type": "boolean",
+            "description": "The boolean value to set the preference to."
+          }
+        ]
+      }
+    ]
+  }
+]

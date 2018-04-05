@@ -1,0 +1,39 @@
+{
+
+  "manifest_version": 2,
+  "name": "Shield Study WebExtension Experiment",
+  "version": "1.0",
+
+  "description": "A Shield Study WebExtension Experiment to change a preference in Firefox.",
+
+  "applications": {
+    "gecko": {
+      "id": "shield-study-webextension-experiment@shield.mozilla.org",
+      "strict_min_version": "59.0"
+    }
+  },
+
+  "background": {
+  "scripts": ["background.js"]
+  },
+
+  "experiment_apis": {
+    "study": {
+      "schema": "./privileged/study/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "script": "./privileged/study/api.js",
+        "paths": [["study"]]
+      }
+    },
+    "prefchange": {
+      "schema": "./privileged/prefchange/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "script": "./privileged/prefchange/api.js",
+        "paths": [["prefchange"]]
+      }
+    }
+  }
+  
+}
